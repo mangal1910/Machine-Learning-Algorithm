@@ -26,6 +26,9 @@ Machine Learning Algorithms/
 ├── LinearRegression/
 │   ├── Canada-per-capita-income-prediction.ipynb
 │   └── canada_per_capita_income.csv
+├── MultiLinearRegression/
+│   ├── Student_performance_Analysis.ipynb
+│   └── student_performance_dataset.csv
 └── [Other algorithms to be added]
 ```
 
@@ -40,6 +43,17 @@ Machine Learning Algorithms/
   - Model training and evaluation
   - Visualization of results
   - Performance metrics (R², MSE, RMSE)
+
+### 2. Multiple Linear Regression
+- **File**: `MultiLinearRegression/Student_performance_Analysis.ipynb`
+- **Dataset**: Student performance dataset
+- **Description**: Analyzing and predicting student performance based on multiple features
+- **Concepts Covered**:
+  - Multiple linear regression with multiple features
+  - Feature analysis and correlation
+  - Model training with multiple predictors
+  - Performance evaluation and metrics
+  - Handling multicollinearity
 
 ## Getting Started
 
@@ -100,10 +114,10 @@ Each algorithm is implemented in its own directory with a dedicated Jupyter note
 All datasets are included in their respective algorithm folders:
 
 - **canada_per_capita_income.csv** - Historical Canadian per capita income data
+- **student_performance_dataset.csv** - Student performance data with multiple academic features
 
 ## Future Enhancements
 
-- [ ] Multiple Linear Regression
 - [ ] Logistic Regression
 - [ ] Decision Trees
 - [ ] Random Forests

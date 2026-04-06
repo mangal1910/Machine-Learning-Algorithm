@@ -29,6 +29,9 @@ Machine Learning Algorithms/
 ├── MultiLinearRegression/
 │   ├── Student_performance_Analysis.ipynb
 │   └── student_performance_dataset.csv
+├── Logistic Regression/
+│   ├── Tinanic-dataset-analysis.ipynb
+│   └── tested.csv
 └── [Other algorithms to be added]
 ```
 
@@ -54,6 +57,18 @@ Machine Learning Algorithms/
   - Model training with multiple predictors
   - Performance evaluation and metrics
   - Handling multicollinearity
+
+### 3. Logistic Regression
+- **File**: `Logistic Regression/Tinanic-dataset-analysis.ipynb`
+- **Dataset**: Titanic dataset
+- **Description**: Binary classification analysis using the Titanic dataset to predict passenger survival
+- **Concepts Covered**:
+  - Logistic regression for binary classification
+  - Feature engineering and data preprocessing
+  - Model training and evaluation
+  - Classification metrics (accuracy, precision, recall, F1-score)
+  - ROC curves and confusion matrices
+  - Handling imbalanced datasets
 
 ## Getting Started
 
@@ -115,10 +130,16 @@ All datasets are included in their respective algorithm folders:
 
 - **canada_per_capita_income.csv** - Historical Canadian per capita income data
 - **student_performance_dataset.csv** - Student performance data with multiple academic features
+- **tested.csv** - Titanic dataset with passenger information for survival prediction analysis
+
+## Completed Algorithms
+
+- [x] Linear Regression
+- [x] Multiple Linear Regression
+- [x] Logistic Regression
 
 ## Future Enhancements
 
-- [ ] Logistic Regression
 - [ ] Decision Trees
 - [ ] Random Forests
 - [ ] Support Vector Machines

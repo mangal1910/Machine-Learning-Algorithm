@@ -1,17 +1,25 @@
-# Logistic Regression - Titanic Dataset Analysis
+# Logistic Regression - Binary Classification Projects
 
 ## Overview
 
-This directory contains a comprehensive analysis of **Logistic Regression** using the famous Titanic dataset. The project demonstrates how to apply logistic regression for binary classification problems to predict whether a passenger survived or not.
+This directory contains comprehensive analyses of **Logistic Regression** using two real-world datasets. The projects demonstrate how to apply logistic regression for binary classification problems to predict survival outcomes and health conditions.
 
 ## Files in This Directory
 
-- **Tinanic-dataset-analysis.ipynb** - Main Jupyter notebook with complete implementation
-- **tested.csv** - Titanic dataset containing passenger information
-- **README.md** - This file
-- **LOGISTIC_REGRESSION_THEORY.md** - Comprehensive theory and mathematical foundations
+### Notebooks
+- **Heart-Disease-Prediction.ipynb** - Logistic regression model for predicting heart disease presence
+- **Tinanic-dataset-analysis.ipynb** - Analysis of survival prediction on the famous Titanic dataset
 
-## What is Logistic Regression?
+### Datasets
+- **heart.csv** - Heart disease dataset with patient health metrics
+- **tested.csv** - Titanic passenger dataset
+
+### Documentation
+- **README.md** - This file
+
+## Dataset Overview
+
+This section provides an overview of the key machine learning concepts applied in both projects.
 
 Logistic Regression is a supervised learning algorithm used for **binary classification problems** (two possible outcomes: 0 or 1, Yes or No, etc.). Despite its name, it's a classification algorithm, not a regression algorithm.
 
@@ -22,74 +30,82 @@ Logistic Regression is a supervised learning algorithm used for **binary classif
 - Works well with linearly separable data
 - Foundation for understanding neural networks
 
-## Dataset Overview
+---
 
-### Titanic Dataset
-The dataset contains information about 891 passengers from the Titanic, including:
+## Project 1: Heart Disease Prediction
+
+### Dataset Overview
+The heart disease dataset contains health metrics for predicting the presence of heart disease (binary classification: 0 = No disease, 1 = Disease present).
+
+**Key Features:**
+- age, sex, cp (chest pain type), trestbps (resting blood pressure)
+- chol (cholesterol), fbs (fasting blood sugar)
+- restecg (resting electrocardiogram), thalach (max heart rate achieved)
+- exang (exercise-induced angina), oldpeak (ST depression)
+- slope, ca (coronary artery calcification), thal (thalassemia)
+
+### Notebook Structure
+1. **Data Loading & Exploration** - Load dataset, check shape and missing values
+2. **Exploratory Data Analysis** - Visualize disease distribution
+3. **Data Preprocessing**
+   - Split data (80% training, 20% testing)
+   - Feature scaling using StandardScaler
+4. **Model Training** - Train LogisticRegression model
+5. **Model Evaluation**
+   - Accuracy score
+   - Classification report (Precision, Recall, F1-score)
+   - Confusion matrix visualization
+6. **Predictions** - Example prediction with probability scores
+
+### Key Features
+- Uses feature scaling (StandardScaler) for optimal model performance
+- Provides probability estimates for predictions
+- Includes example prediction for new patient data
+
+---
+
+## Project 2: Titanic Survival Prediction
+
+### Dataset Overview
+The famous Titanic dataset contains information about 891 passengers, used to predict whether a passenger survived (binary classification: 0 = Did not survive, 1 = Survived).
+
+**Key Statistics:**
+- Total Passengers: 891
+- Survived: ~38.4%
+- Did Not Survive: ~61.6%
 
 | Feature | Description | Type |
 |---------|-------------|------|
 | PassengerId | Unique identifier | Integer |
-| Survived | Target variable (0 = Did not survive, 1 = Survived) | Binary |
+| Survived | Target variable (0 or 1) | Binary |
 | Pclass | Passenger class (1, 2, or 3) | Ordinal |
 | Sex | Gender (male/female) | Categorical |
 | Age | Age in years | Continuous |
 | SibSp | Number of siblings/spouses | Integer |
 | Parch | Number of parents/children | Integer |
-| Fare | Ticket fare in pounds | Continuous |
+| Fare | Ticket fare | Continuous |
 | Embarked | Port of embarkation (C, Q, S) | Categorical |
-| Cabin | Cabin number | Categorical |
-| Name | Passenger name | Text |
-| Ticket | Ticket number | Categorical |
 
-### Key Statistics
-- **Total Passengers**: 891
-- **Survived**: ~38.4%
-- **Did Not Survive**: ~61.6%
-- **Missing Values**: Age, Embarked, Cabin have missing values
-
-## Notebook Structure
-
-### 1. **Data Loading & Exploration**
-   - Import required libraries
-   - Load and explore the dataset
-   - Check for missing values
-
-### 2. **Exploratory Data Analysis (EDA)**
-   - Survival rates by sex, passenger class, and embarkation port
-   - Visualization with bar charts and heatmaps
-   - Statistical insights
-
-### 3. **Data Preprocessing**
+### Notebook Structure
+1. **Data Loading & Exploration** - Load and explore Titanic dataset
+2. **Exploratory Data Analysis (EDA)** - Survival rates by sex, class, port
+3. **Data Preprocessing**
    - Remove unnecessary columns (PassengerId, Name, Ticket, Cabin)
-   - Handle missing values using median/mode imputation
-   - Encode categorical variables:
-     - Sex: female→0, male→1
-     - Embarked: C→0, Q→1, S→2
+   - Handle missing values (median/mode imputation)
+   - Encode categoricals (Sex: female→0, male→1; Embarked: C→0, Q→1, S→2)
+4. **Model Training** - Split data and train LogisticRegression
+5. **Model Evaluation** - Accuracy, classification report, confusion matrix
 
-### 4. **Model Training**
-   - Split data into training (80%) and testing (20%) sets
-   - Initialize LogisticRegression with max_iter=1000
-   - Train the model on training data
-
-### 5. **Model Evaluation**
-   - Calculate accuracy score
-   - Generate classification report (Precision, Recall, F1-score)
-   - Create confusion matrix visualization
-
-## Key Findings
-
-### Survival Rates
-- **By Sex**: Women had significantly higher survival rates (~74%) compared to men (~19%)
+### Key Findings
+- **By Sex**: Women had significantly higher survival rates (~74%) vs. men (~19%)
 - **By Class**: First-class passengers had higher survival rates (~63%) vs. third-class (~24%)
-- **By Port**: Passengers boarding from Cherbourg (C) had the highest survival rate
+- **By Port**: Passengers from Cherbourg (C) had the highest survival rate
 
-### Model Performance
-The logistic regression model achieves strong performance metrics on the test set, with balanced precision and recall for both survival classes.
+---
 
-## Running the Notebook
+## Running the Notebooks
 
-1. Ensure all dependencies are installed:
+1. Install dependencies:
    ```bash
    pip install pandas matplotlib seaborn scikit-learn jupyter
    ```
@@ -99,9 +115,9 @@ The logistic regression model achieves strong performance metrics on the test se
    cd "Logistic Regression"
    ```
 
-3. Launch Jupyter and open the notebook:
+3. Launch Jupyter and open either notebook:
    ```bash
-   jupyter notebook Tinanic-dataset-analysis.ipynb
+   jupyter notebook
    ```
 
 4. Run cells sequentially to execute the analysis and view results
@@ -151,6 +167,3 @@ After completing this project, you should understand:
 This project is part of a comprehensive machine learning algorithms study. The focus is on understanding the fundamentals and practical implementation rather than achieving maximum accuracy.
 
 ---
-
-**Last Updated**: April 6, 2026  
-**Status**: ✅ Completed
